@@ -112,8 +112,8 @@ class App extends Component {
             key={path}
             path={path}
             render={routeProps => {
-              const { folderId } = routeProps.match.params
-              const notesForFolder = getNotesForFolder(notes, folderId)
+              const { folderId } = routeProps.match.params;
+              const notesForFolder = !folderId ? notes : notes.filter(note => note.folder_id === parseInt(folderId));
               return (
                 <NoteListMain
                   {...routeProps}

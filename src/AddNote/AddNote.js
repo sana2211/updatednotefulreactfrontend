@@ -36,7 +36,7 @@ export default class AddNote extends Component {
       {
         if(response)
         {
-          alert("Note Added!" + response)
+          alert("Note Added!")
         }
       })
     .catch(error=>console.log(error));
