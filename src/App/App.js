@@ -10,7 +10,8 @@ import AddNote from '../AddNote/AddNote'
 import dummyStore from '../dummy-store'
 import { getNotesForFolder, findNote, findFolder } from '../notes-helpers'
 import './App.css'
-import Config from '../config'
+import Config from '../config';
+import ErrorBoundary from "../ErrorBoundary";
 const API = Config.API_ENDPOINT;
 
 class App extends Component {
@@ -158,6 +159,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <ErrorBoundary>
         <nav className='App__nav'>
           {this.renderNavRoutes()}
         </nav>
@@ -171,6 +173,7 @@ class App extends Component {
         <main className='App__main'>
           {this.renderMainRoutes()}
         </main>
+        </ErrorBoundary>
       </div>
     )
   }
