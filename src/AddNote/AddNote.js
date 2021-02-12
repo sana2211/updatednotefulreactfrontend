@@ -20,6 +20,12 @@ export default class AddNote extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    //console.log(this.state)
+    if(!this.state.folderId)
+    {
+      alert("Please select folder to add note to");
+      return false;
+    }
     const data = JSON.stringify(
       {
         note_name : this.state.noteName, 
@@ -36,7 +42,8 @@ export default class AddNote extends Component {
       {
         if(response)
         {
-          alert("Note Added!")
+          alert("Note Added!");
+          window.location.replace("/");
         }
       })
     .catch(error=>console.log(error));
@@ -53,20 +60,20 @@ export default class AddNote extends Component {
             <label htmlFor='note-name-input'>
               Name
             </label>
-            <input type='text' id='noteName' name='noteName' onChange={(e) => this.handleInput(e)} />
+            <input required type='text' id='noteName' name='noteName' onChange={(e) => this.handleInput(e)} />
           </div>
           <div className='field'>
             <label htmlFor='note-content-input'>
               Content
             </label>
-            <textarea id='content' name="content" onChange={(e) => this.handleInput(e)} />
+            <textarea required id='content' name="content" onChange={(e) => this.handleInput(e)} />
           </div>
           <div className='field'>
             <label htmlFor='note-folder-select'>
               Folder
             </label>
-            <select id='folderId' name='folderId' onChange={(e) => this.handleInput(e)}>
-              <option value={null}>...</option>
+            <select required id='folderId' name='folderId' onChange={(e) => this.handleInput(e)}>
+              <option>...</option>
               {folders.map(folder =>
                 <option key={folder.id} value={folder.id}>
                   {folder.folder_name}
