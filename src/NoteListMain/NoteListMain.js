@@ -41,5 +41,5 @@ NoteListMain.defaultProps = {
 
 
 NoteListMain.propTypes = {
-  notes: PropTypes.array
+  notes: PropTypes.array.isRequired
 };

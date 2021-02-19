@@ -16,5 +16,5 @@ export default function NotefulForm(props) {
 
 NotefulForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string.isRequired
 };
