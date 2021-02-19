@@ -44,5 +44,6 @@ NoteListNav.defaultProps = {
 }
 
 NoteListNav.propTypes = {
-  folders: PropTypes.array
+  folders: PropTypes.array,
+  notes: PropTypes.array
 };
