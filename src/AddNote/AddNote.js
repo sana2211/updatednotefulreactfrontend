@@ -57,7 +57,7 @@ export default class AddNote extends Component {
       <ErrorBoundary>
       <section className='AddNote'>
         <h2>Create a note</h2>
-        <NotefulForm handleSubmit={(e)=>this.handleSubmit(e)}>
+        <NotefulForm handlesubmit={(e)=>this.handleSubmit(e)}>
           <div className='field'>
             <label htmlFor='note-name-input'>
               Name

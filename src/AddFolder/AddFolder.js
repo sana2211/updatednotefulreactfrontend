@@ -45,7 +45,7 @@ export default class AddFolder extends Component {
       <ErrorBoundary>
       <section className='AddFolder'>
         <h2>Create a folder</h2>
-        <NotefulForm handleSubmit={(e)=>this.handleSubmit(e)}>
+        <NotefulForm handlesubmit={(e)=>this.handleSubmit(e)}>
           <div className='field'>
             <label htmlFor='folder-name-input'>
               Name

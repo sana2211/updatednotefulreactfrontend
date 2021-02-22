@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 import ErrorBoundary from '../ErrorBoundary';
 
 export default function NotefulForm(props) {
-  console.log(props);
-  const { className, ...otherProps } = props
+  const { className, handlesubmit, ...otherProps } = props
   return (
     <ErrorBoundary>
-    <form onSubmit={(e) => props.handleSubmit(e)}
+    <form onSubmit={e=>handlesubmit(e)}
       className={['Noteful-form', className].join(' ')}
       action='#'
       {...otherProps}
@@ -18,6 +17,6 @@ export default function NotefulForm(props) {
 }
 
 NotefulForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired
+  handlesubmit: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
