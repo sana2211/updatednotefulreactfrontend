@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NotefulForm from '../NotefulForm/NotefulForm'
 import './AddFolder.css'
 import conf from "../config";
-
+import ErrorBoundary from "../ErrorBoundary";
 export default class AddFolder extends Component {
   state = {
     name: ""
@@ -42,6 +42,7 @@ export default class AddFolder extends Component {
   
   render() {
     return (
+      <ErrorBoundary>
       <section className='AddFolder'>
         <h2>Create a folder</h2>
         <NotefulForm handleSubmit={(e)=>this.handleSubmit(e)}>
@@ -58,6 +59,7 @@ export default class AddFolder extends Component {
           </div>
         </NotefulForm>
       </section>
+      </ErrorBoundary>
     )
   }
 }

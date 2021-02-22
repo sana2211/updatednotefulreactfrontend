@@ -5,8 +5,11 @@ import CircleButton from '../CircleButton/CircleButton'
 import { countNotesForFolder } from '../notes-helpers'
 import './NoteListNav.css'
 import PropTypes from 'prop-types';
+import ErrorBoundary from "../ErrorBoundary";
+
 export default function NoteListNav(props) {
   return (
+    <ErrorBoundary>
     <div className='NoteListNav'>
       <ul className='NoteListNav__list'>
         {props.folders.map(folder =>
@@ -36,6 +39,7 @@ export default function NoteListNav(props) {
         </CircleButton>
       </div>
     </div>
+    </ErrorBoundary>
   )
 }
 

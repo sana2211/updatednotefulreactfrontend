@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NotefulForm from '../NotefulForm/NotefulForm'
 import './AddNote.css'
 import conf from "../config";
+import ErrorBoundary from "../ErrorBoundary";
 
 export default class AddNote extends Component {
   static defaultProps = {
@@ -53,6 +54,7 @@ export default class AddNote extends Component {
   render() {
     const { folders } = this.props
     return (
+      <ErrorBoundary>
       <section className='AddNote'>
         <h2>Create a note</h2>
         <NotefulForm handleSubmit={(e)=>this.handleSubmit(e)}>
@@ -88,6 +90,7 @@ export default class AddNote extends Component {
           </div>
         </NotefulForm>
       </section>
+      </ErrorBoundary>
     )
   }
 }

@@ -4,9 +4,12 @@ import { format } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Note.css'
 import PropTypes from 'prop-types';
+import ErrorBoundary from "../ErrorBoundary";
 
 export default function Note(props) {
+
   return (
+    <ErrorBoundary>
     <div className='Note'>
       <h2 className='Note__title'>
         <Link to={`/note/${props.id}`}>
@@ -28,6 +31,7 @@ export default function Note(props) {
         </div>
       </div>
     </div>
+    </ErrorBoundary>
   )
 }
 

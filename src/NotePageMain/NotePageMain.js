@@ -2,8 +2,11 @@ import React from 'react'
 import Note from '../Note/Note'
 import './NotePageMain.css'
 import PropTypes from 'prop-types';
+import ErrorBoundary from "../ErrorBoundary";
+
 export default function NotePageMain(props) {
   return (
+    <ErrorBoundary>
     <section className='NotePageMain'>
       <Note
         id={props.note.id}
@@ -16,6 +19,7 @@ export default function NotePageMain(props) {
         )}
       </div>
     </section>
+    </ErrorBoundary>
   )
 }
 

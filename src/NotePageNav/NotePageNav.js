@@ -3,8 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CircleButton from '../CircleButton/CircleButton'
 import './NotePageNav.css'
 import PropTypes from 'prop-types';
+import ErrorBoundary from "../ErrorBoundary";
+
 export default function NotePageNav(props) {
   return (
+    <ErrorBoundary>
     <div className='NotePageNav'>
       <CircleButton
         tag='button'
@@ -22,6 +25,7 @@ export default function NotePageNav(props) {
         </h3>
       )}
     </div>
+    </ErrorBoundary>
   )
 }
 
